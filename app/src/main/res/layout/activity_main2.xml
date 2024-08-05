@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/main"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".MainActivity2">
+
+  <LinearLayout
+    android:id="@+id/main2_container"
+    android:layout_width="409dp"
+    android:layout_height="729dp"
+    android:background="@color/material_dynamic_secondary70"
+    android:orientation="vertical"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+    <LinearLayout
+      android:id="@+id/upper_container"
+      android:layout_width="match_parent"
+      android:layout_height="202dp"
+      android:paddingTop="8dp"
+      android:paddingStart="8dp"
+      android:paddingEnd="8dp"
+      android:orientation="horizontal">
+      <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <Button
+          android:id="@+id/start_reset_button"
+          android:layout_width="100dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="20dp"
+          android:layout_marginBottom="20dp"
+          android:layout_gravity="center"
+          android:backgroundTint="@color/operator_button"
+          android:gravity="center"
+          android:text="@string/start"
+          android:textColor="@color/black"
+          android:textSize="20sp" />
+        <TableLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+          <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+            <TextView
+              android:id="@+id/time_title"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/time_title"
+              android:textColor="@color/black"
+              android:textSize="24sp" />
+            <TextView
+              android:id="@+id/time"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="@color/black"
+              android:textSize="24sp" />
+          </TableRow>
+          <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+            <TextView
+              android:id="@+id/score_title"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/score_title"
+              android:textColor="@color/black"
+              android:textSize="24sp" />
+            <TextView
+              android:id="@+id/score"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="@color/black"
+              android:textSize="24sp" />
+          </TableRow>
+        </TableLayout>
+      </LinearLayout>
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+          android:id="@+id/next_block_text"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:gravity="center"
+          android:text="@string/next_blocks_title"
+          android:textColor="@color/black"
+          android:textSize="24sp" />
+        <View
+          android:id="@+id/view2"
+          android:layout_width="@dimen/next_block__display_size"
+          android:layout_height="@dimen/next_block__display_size"
+          android:layout_gravity="center_horizontal"
+          android:background="@color/white" />
+      </LinearLayout>
+    </LinearLayout>
+    <FrameLayout
+      android:id="@+id/medium_container"
+      android:layout_width="match_parent"
+      android:layout_height="419dp">
+      <View
+        android:id="@+id/game_display"
+        android:layout_width="@dimen/game_display_width"
+        android:layout_height="@dimen/game_display_height"
+        android:layout_marginBottom="8dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:background="@color/white" />
+    </FrameLayout>
+    <LinearLayout
+      android:id="@+id/operation_button_container"
+      style="buttonBarStyle"
+      android:layout_width="match_parent"
+      android:layout_height="54dp"
+      android:paddingLeft="8dp"
+      android:paddingRight="8dp"
+      android:orientation="horizontal">
+      <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_gravity="center_vertical"
+        android:backgroundTint="@color/operator_button"
+        android:text="@string/rotate_left"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+      <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_gravity="center_vertical"
+        android:backgroundTint="@color/operator_button"
+        android:text="@string/move_left"
+        android:textColor="@color/black" />
+      <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_gravity="center_vertical"
+        android:backgroundTint="@color/operator_button"
+        android:text="@string/move_right"
+        android:textColor="@color/black" />
+      <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="4dp"
+        android:layout_gravity="center_vertical"
+        android:backgroundTint="@color/operator_button"
+        android:text="@string/rotate_right"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+    </LinearLayout>
+    <Button
+      android:id="@+id/move_down_button"
+      android:layout_width="200dp"
+      android:layout_height="51dp"
+      android:layout_marginLeft="32dp"
+      android:layout_marginRight="32dp"
+      android:layout_gravity="center"
+      android:backgroundTint="@color/operator_button"
+      android:text="@string/move_down"
+      android:textColor="@color/black" />
+  </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

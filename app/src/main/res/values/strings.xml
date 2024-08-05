@@ -1,3 +1,15 @@
 <resources>
   <string name="app_name">Tetris</string>
+  <string name="easy_button_text">Easy</string>
+  <string name="normal_button_text">Normal</string>
+  <string name="hard_button_text">Hard</string>
+  <string name="move_down">↓</string>
+  <string name="move_left">←</string>
+  <string name="move_right">→</string>
+  <string name="rotate_right">↷</string>
+  <string name="rotate_left">↶</string>
+  <string name="time_title">Time :  </string>
+  <string name="score_title">Score : </string>
+  <string name="next_blocks_title">Next Blocks</string>
+  <string name="start">Start</string>
 </resources>

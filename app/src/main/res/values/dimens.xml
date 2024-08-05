@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="game_display_width">320dp</dimen>
+  <dimen name="game_display_height">400dp</dimen>
+  <dimen name="next_block__display_size">160dp</dimen>
+</resources>
