@@ -5,10 +5,10 @@
   android:id="@+id/main"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".MainActivity2">
+  tools:context=".GameActivity">
 
   <LinearLayout
-    android:id="@+id/main2_container"
+    android:id="@+id/main2Container"
     android:layout_width="409dp"
     android:layout_height="729dp"
     android:background="@color/material_dynamic_secondary70"
@@ -18,7 +18,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent">
     <LinearLayout
-      android:id="@+id/upper_container"
+      android:id="@+id/upperContainer"
       android:layout_width="match_parent"
       android:layout_height="202dp"
       android:paddingTop="8dp"
@@ -26,15 +26,27 @@
       android:paddingEnd="8dp"
       android:orientation="horizontal">
       <LinearLayout
+        android:id="@+id/upperLeftContainer"
         android:layout_width="200dp"
         android:layout_height="match_parent"
         android:orientation="vertical">
         <Button
-          android:id="@+id/start_reset_button"
+          android:id="@+id/exitButton"
           android:layout_width="100dp"
           android:layout_height="wrap_content"
-          android:layout_marginTop="20dp"
-          android:layout_marginBottom="20dp"
+          android:layout_marginTop="10dp"
+          android:layout_gravity="center"
+          android:backgroundTint="@color/operator_button"
+          android:gravity="center"
+          android:text="@string/exit"
+          android:textColor="@color/black"
+          android:textSize="20sp" />
+        <Button
+          android:id="@+id/startResetButton"
+          android:layout_width="100dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp"
+          android:layout_marginBottom="10dp"
           android:layout_gravity="center"
           android:backgroundTint="@color/operator_button"
           android:gravity="center"
@@ -42,15 +54,17 @@
           android:textColor="@color/black"
           android:textSize="20sp" />
         <TableLayout
+          android:id="@+id/timeScoreContainer"
           android:layout_width="match_parent"
           android:layout_height="match_parent">
 
           <TableRow
+            android:id="@+id/timeContainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center">
             <TextView
-              android:id="@+id/time_title"
+              android:id="@+id/timeTitle"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="@string/time_title"
@@ -64,11 +78,12 @@
               android:textSize="24sp" />
           </TableRow>
           <TableRow
+            android:id="@+id/scoreContainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center">
             <TextView
-              android:id="@+id/score_title"
+              android:id="@+id/scoreTitle"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="@string/score_title"
@@ -84,11 +99,12 @@
         </TableLayout>
       </LinearLayout>
       <LinearLayout
+        android:id="@+id/nextBlocksContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
         <TextView
-          android:id="@+id/next_block_text"
+          android:id="@+id/nextBocksTitle"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_gravity="center"
@@ -96,8 +112,8 @@
           android:text="@string/next_blocks_title"
           android:textColor="@color/black"
           android:textSize="24sp" />
-        <View
-          android:id="@+id/view2"
+        <com.example.tetris.NextBlocksDisplay
+          android:id="@+id/nextBlocksDisplay"
           android:layout_width="@dimen/next_block__display_size"
           android:layout_height="@dimen/next_block__display_size"
           android:layout_gravity="center_horizontal"
@@ -105,11 +121,11 @@
       </LinearLayout>
     </LinearLayout>
     <FrameLayout
-      android:id="@+id/medium_container"
+      android:id="@+id/mediumContainer"
       android:layout_width="match_parent"
       android:layout_height="419dp">
-      <View
-        android:id="@+id/game_display"
+      <com.example.tetris.GameDisplay
+        android:id="@+id/gameDisplay"
         android:layout_width="@dimen/game_display_width"
         android:layout_height="@dimen/game_display_height"
         android:layout_marginBottom="8dp"
@@ -117,7 +133,7 @@
         android:background="@color/white" />
     </FrameLayout>
     <LinearLayout
-      android:id="@+id/operation_button_container"
+      android:id="@+id/operationButtonContainer"
       style="buttonBarStyle"
       android:layout_width="match_parent"
       android:layout_height="54dp"
@@ -125,7 +141,7 @@
       android:paddingRight="8dp"
       android:orientation="horizontal">
       <Button
-        android:id="@+id/button2"
+        android:id="@+id/rotateLeftButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -137,7 +153,7 @@
         android:textColor="@color/black"
         android:textSize="20sp" />
       <Button
-        android:id="@+id/button3"
+        android:id="@+id/moveLeftButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -148,7 +164,7 @@
         android:text="@string/move_left"
         android:textColor="@color/black" />
       <Button
-        android:id="@+id/button4"
+        android:id="@+id/moveRightButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -159,7 +175,7 @@
         android:text="@string/move_right"
         android:textColor="@color/black" />
       <Button
-        android:id="@+id/button5"
+        android:id="@+id/rotateRightButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -171,7 +187,7 @@
         android:textSize="20sp" />
     </LinearLayout>
     <Button
-      android:id="@+id/move_down_button"
+      android:id="@+id/moveDownButton"
       android:layout_width="200dp"
       android:layout_height="51dp"
       android:layout_marginLeft="32dp"

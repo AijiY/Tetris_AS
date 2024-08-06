@@ -12,4 +12,6 @@
   <string name="score_title">Score : </string>
   <string name="next_blocks_title">Next Blocks</string>
   <string name="start">Start</string>
+  <string name="reset">Reset</string>
+  <string name="exit">Exit</string>
 </resources>
