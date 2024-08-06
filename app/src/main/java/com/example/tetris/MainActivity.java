@@ -1,7 +1,9 @@
 package com.example.tetris;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import android.widget.Button;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -20,5 +22,30 @@ public class MainActivity extends AppCompatActivity {
       v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
       return insets;
     });
+
+    easyButton.setOnClickListener(v -> {
+      Intent intent = new Intent(MainActivity.this, GameActivity.class);
+      intent.putExtra("difficulty", 1);
+      startActivity(intent);
+    });
+
+    normalButton.setOnClickListener(v -> {
+      Intent intent = new Intent(MainActivity.this, GameActivity.class);
+      intent.putExtra("difficulty", 2);
+      startActivity(intent);
+    });
+
+    hardButton.setOnClickListener(v -> {
+      Intent intent = new Intent(MainActivity.this, GameActivity.class);
+      intent.putExtra("difficulty", 3);
+      startActivity(intent);
+    });
+
   }
+
+  Button easyButton = findViewById(R.id.easyButton);
+  Button normalButton = findViewById(R.id.normalButton);
+  Button hardButton = findViewById(R.id.hardButton);
+
+
 }
